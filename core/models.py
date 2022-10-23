@@ -21,7 +21,7 @@ class ToDoItem(models.Model):
     due_date = models.DateTimeField()
     description = models.TextField()
     status = models.CharField(max_length=MAX_LENGTH, choices=TODO_STATUS_CHOICES)
-    completion_date = models.DateTimeField()    
+    completion_date = models.DateTimeField(null=True, blank=True)    
 
     def __str__(self):
         return f"{self.title}: due {self.due_date}"
